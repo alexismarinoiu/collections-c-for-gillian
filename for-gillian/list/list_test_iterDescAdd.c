@@ -2114,8 +2114,8 @@ int main() {
 
     int *a = (int*) malloc(sizeof(int));
     int *b = (int*) malloc(sizeof(int));
-    *a = __builtin_annot_intval("symb_int", a);;
-    *b = __builtin_annot_intval("symb_int", b);
+    *a = __builtin_annot_intval("symb_int", *a);;
+    *b = __builtin_annot_intval("symb_int", *b);
 
     ASSUME(vc != va && vc != vb && vc != vd &&
            vd != va && vd != vb);

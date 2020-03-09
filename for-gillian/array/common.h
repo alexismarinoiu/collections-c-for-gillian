@@ -21,6 +21,7 @@
 #ifndef COLLECTIONS_C_COMMON_H
 #define COLLECTIONS_C_COMMON_H
 
+#include <gillian-c/gillian-c.h>
 #include <stdlib.h>
 #include <stdint.h>
 #include <stdbool.h>

@@ -1605,11 +1605,7 @@ void *copy(void *e1)
     return cp;
 }
 
-void p(void *e)
-{
-    int *i = e;
-    printf("%d ", *i);
-}
+
 
 bool pred1(const void *e)
 {

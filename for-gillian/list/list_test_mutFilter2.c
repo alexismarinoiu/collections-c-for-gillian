@@ -2119,7 +2119,7 @@ int main() {
     ASSERT(1 == list_size(list1));
 
     int* i0;
-    ASSERT(list_get_at(list1, 0, &i0) == CC_OK);
+    ASSERT(list_get_at(list1, 0, (void**) &i0) == CC_OK);
     ASSERT(*i0 == vd);
 
     teardown_test();

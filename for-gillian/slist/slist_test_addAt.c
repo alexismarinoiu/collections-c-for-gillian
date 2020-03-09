@@ -1601,11 +1601,7 @@ void *copy(void *e1)
     return cp;
 }
 
-void p(void *e)
-{
-    int *i = e;
-    printf("%d ", *i);
-}
+
 
 bool pred1(const void *e)
 {
@@ -1693,7 +1689,7 @@ int main() {
     setup_test();
 
     int *ins = (int*)malloc(sizeof(int));
-    *ins = __builtin_annot_intval("symb_int", ins);
+    *ins = __builtin_annot_intval("symb_int", *ins);
 
     slist_add_at(list, ins, 2);
     ASSERT(5 == slist_size(list));

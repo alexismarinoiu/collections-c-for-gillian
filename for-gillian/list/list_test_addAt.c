@@ -2113,7 +2113,7 @@ int main() {
     setup_tests();
 
     int *ins = (int*)malloc(sizeof(int));
-    *ins = __builtin_annot_intval("symb_int", ins);
+    *ins = __builtin_annot_intval("symb_int", *ins);
 
     list_add_at(list1, ins, 3);
     ASSERT(5 == list_size(list1));

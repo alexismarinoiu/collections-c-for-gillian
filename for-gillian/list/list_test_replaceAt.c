@@ -2113,7 +2113,7 @@ int main() {
     setup_tests();
 
     int *replacement = (int*) malloc(sizeof(int));
-    *replacement = __builtin_annot_intval("symb_int", replacement);;
+    *replacement = __builtin_annot_intval("symb_int", *replacement);;
 
     int *r;
     list_replace_at(list1, replacement, 2, (void*) &r);

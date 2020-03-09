@@ -1,3 +1,4 @@
+
 /*
  * Collections-C
  * Copyright (C) 2013-2015 Srđan Panić <srdja.panic@gmail.com>
@@ -1601,11 +1602,7 @@ void *copy(void *e1)
     return cp;
 }
 
-void p(void *e)
-{
-    int *i = e;
-    printf("%d ", *i);
-}
+
 
 bool pred1(const void *e)
 {
@@ -1693,7 +1690,7 @@ int main() {
     setup_test();
 
     int *replacement = (int*) malloc(sizeof(int));
-    *replacement = __builtin_annot_intval("symb_int", replacement);
+    *replacement = __builtin_annot_intval("symb_int", *replacement);
 
     int *e;
     slist_replace_at(list, replacement, 2, (void*) &e);

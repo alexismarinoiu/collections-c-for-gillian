@@ -2121,7 +2121,7 @@ int main() {
     ASSERT(1 == list_size(filter));
 
     int* i0;
-    ASSERT(list_get_at(filter, 0, &i0) == CC_OK);
+    ASSERT(list_get_at(filter, 0, (void**) &i0) == CC_OK);
     ASSERT(*i0 == vd);
 
     teardown_test();

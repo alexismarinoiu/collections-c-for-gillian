@@ -1601,11 +1601,7 @@ void *copy(void *e1)
     return cp;
 }
 
-void p(void *e)
-{
-    int *i = e;
-    printf("%d ", *i);
-}
+
 
 bool pred1(const void *e)
 {
@@ -1693,7 +1689,7 @@ int main() {
     setup_test();
 
     int *ins = (int*) malloc(sizeof(int));
-    *ins = __builtin_annot_intval("symb_int", ins);
+    *ins = __builtin_annot_intval("symb_int", *ins);
 
     SListIter iter;
     slist_iter_init(&iter, list);
@@ -1717,7 +1713,7 @@ int main() {
     ASSERT(vd == *li4);
 
     int* ins2 = (int*) malloc(sizeof(int));
-    *ins2 = __builtin_annot_intval("symb_int", ins2);;
+    *ins2 = __builtin_annot_intval("symb_int", *ins2);
 
     slist_iter_init(&iter, list);
     while (slist_iter_next(&iter, (void*) &el) != CC_ITER_END) {
