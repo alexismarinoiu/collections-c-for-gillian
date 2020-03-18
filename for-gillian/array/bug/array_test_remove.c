@@ -1158,6 +1158,7 @@ static int stat;
 int main() {
 
     stat = array_new(&v1);
+
     int n = __builtin_annot_intval("symb_int", n);
     ASSUME (n > 2 && n < 16);
 
@@ -1165,7 +1166,7 @@ int main() {
     int* next_to_last;
 
     for (int i = 0; i < n; i++) {
-        int*a = malloc(sizeof(int));
+        int *a = malloc(sizeof(int));
         array_add(v1, a);
         next_to_last = last;
         last = a;

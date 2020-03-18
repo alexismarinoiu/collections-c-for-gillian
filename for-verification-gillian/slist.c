@@ -48,8 +48,8 @@ static enum cc_stat get_node     (SList *list, void *element, SNode **node, SNod
  */
 /*@
     spec slist_conf_init(conf) {
-        requires: conf -> struct slist_conf_s { #a; #b; #c }
-        ensures: conf -> struct slist_conf_s { funptr(malloc); funptr(calloc); funptr(free)  }
+        requires: (conf == #conf) * conf -> struct slist_conf_s { #a; #b; #c }
+        ensures: #conf -> struct slist_conf_s { funptr(malloc); funptr(calloc); funptr(free)  }
     }
 */
 void slist_conf_init(SListConf *conf)
