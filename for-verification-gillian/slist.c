@@ -18,6 +18,7 @@
  * along with Collections-C.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+#include <gillian-c/gillian-c.h>
 #include "include/slist.h"
 
 
@@ -45,6 +46,12 @@ static enum cc_stat get_node     (SList *list, void *element, SNode **node, SNod
  *
  * @param[in] conf the SListConf struct that is being initialized.
  */
+/*@
+    spec slist_conf_init(conf) {
+        requires: conf -> struct slist_conf_s { #a; #b; #c }
+        ensures: conf -> struct slist_conf_s { funptr(malloc); funptr(calloc); funptr(free)  }
+    }
+*/
 void slist_conf_init(SListConf *conf)
 {
     conf->mem_alloc  = malloc;
