@@ -29,5 +29,5 @@ consist of:
   `((size_t) - 2)` to `16777216LU` (i.e. 2 ^ 24), as casts are not yet supported
   by Gillian.
 
-- The removal of the `#include <stdio.h>` directive from `include/ringbuffer.h`,
+- The removal of the `#include <stdio.h>` directive from `include/ring_buffer.h`,
   as Gillian does not yet support all standard library functions.

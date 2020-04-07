@@ -5,6 +5,7 @@ set -e
 find . -name \*.csm -type f -delete
 find . -name \*.i -type f -delete
 find . -name \*.gil -type f -delete
+rm -f *.log
 
 find . -name \*.bc -type f -delete
 rm -rf klee-out-*
