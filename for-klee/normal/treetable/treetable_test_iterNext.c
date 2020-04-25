@@ -1,0 +1,69 @@
+#include "treetable.h"
+#include "utils.h"
+#include <klee/klee.h> 
+
+static TreeTable *table;
+
+int main() {
+    treetable_new(cmp, &table);
+
+    int pa; klee_make_symbolic(&pa, sizeof(int), "pa");
+    int pb; klee_make_symbolic(&pb, sizeof(int), "pb");
+    int pc; klee_make_symbolic(&pc, sizeof(int), "pc");
+    int pd; klee_make_symbolic(&pd, sizeof(int), "pd");
+
+    klee_assume(pa < pb && pb < pd && pd < pc);
+
+    char a; klee_make_symbolic(&a, sizeof(char), "a");
+
+    char str_a[] = {a, '\0'};
+
+    char b; klee_make_symbolic(&b, sizeof(char), "b");
+
+    char str_b[] = {b, '\0'};
+
+    char c; klee_make_symbolic(&c, sizeof(char), "c");
+
+    char str_c[] = {c, '\0'};
+
+    char d; klee_make_symbolic(&d, sizeof(char), "d");
+
+    char str_d[] = {d, '\0'};
+
+    treetable_add(table, &pc, str_a);
+    treetable_add(table, &pd, str_b);
+    treetable_add(table, &pb, str_c);
+    treetable_add(table, &pa, str_d);
+
+    int one = 0;
+    int two = 0;
+    int three = 0;
+    int four = 0;
+
+    TreeTableIter iter;
+    treetable_iter_init(&iter, table);
+
+    TreeTableEntry entry;
+    while (treetable_iter_next(&iter, &entry) != CC_ITER_END) {
+        int const *key = entry.key;
+
+        if (*key == pa)
+            one++;
+
+        if (*key == pb)
+            two++;
+
+        if (*key == pc)
+            three++;
+
+        if (*key == pd)
+            four++;
+    }
+
+    klee_assert(1 == one);
+    klee_assert(1 == two);
+    klee_assert(1 == three);
+    klee_assert(1 == four);
+
+    treetable_destroy(table);
+}
