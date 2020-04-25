@@ -31,3 +31,23 @@ consist of:
 
 - The removal of the `#include <stdio.h>` directive from `include/ring_buffer.h`,
   as Gillian does not yet support all standard library functions.
+
+
+## Running examples with KLEE
+
+Make sure that Klee, as well as `clang` and `llvm-link` is installed globally on your machine.
+You also need the `klee_src` folder that contains `include/klee/klee.h` to be next to the collections-c-for-gillian folder.
+
+Then, you can run a test suite, such as `array` by running
+
+```
+$ ./testKleeFolder.sh for-klee/normal/pqueue
+```
+
+or 
+
+```
+$ ./testKleeFolder.sh for-klee/bugs
+```
+
+The Makefile is configured to correctly build each file you will be testing, based on the bugs or normal library.
