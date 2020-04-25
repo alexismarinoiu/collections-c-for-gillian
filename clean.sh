@@ -11,3 +11,4 @@ find . -name \*.bc -type f -delete
 rm -rf klee-out-*
 rm -f klee_output.log
 rm -rf klee-last
+rm -rf klee_build

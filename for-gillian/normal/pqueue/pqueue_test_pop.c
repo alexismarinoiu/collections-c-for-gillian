@@ -37,8 +37,8 @@ int main() {
     int ab = __builtin_annot_intval("symb_int", ab);
     int ba = __builtin_annot_intval("symb_int", ba);
     int bb = __builtin_annot_intval("symb_int", bb);
-    int ca = __builtin_annot_intval("symb_int", ba);
-    int cb = __builtin_annot_intval("symb_int", bb);
+    int ca = __builtin_annot_intval("symb_int", ca);
+    int cb = __builtin_annot_intval("symb_int", cb);
 
     int a = __builtin_annot_intval("symb_int", a);
     int b = __builtin_annot_intval("symb_int", b);
