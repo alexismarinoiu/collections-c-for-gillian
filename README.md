@@ -21,9 +21,8 @@ bug fixes detailed above and corresponds to the Collections-C repo at commit [58
 $ ./runGillianTests.sh
 ```
 
-Finally, both version of the library in this repo have had to be modified
-slightly in order to account for the current limitation of Gillian-C. These
-consist of:
+Finally, both versions of the library in this repo have had to be modified
+slightly in order to account for the current limitations of Gillian-C. The changes are:
 
 - The redefinition of the `CC_MAX_ELEMENTS` macro (in `include/common.h`) from 
   `((size_t) - 2)` to `16777216LU` (i.e. 2 ^ 24), as casts are not yet supported
@@ -32,19 +31,18 @@ consist of:
 - The removal of the `#include <stdio.h>` directive from `include/ring_buffer.h`,
   as Gillian does not yet support all standard library functions.
 
-
 ## Running examples with KLEE
 
 Make sure that Klee, as well as `clang` and `llvm-link` is installed globally on your machine.
-You also need the `klee_src` folder that contains `include/klee/klee.h` to be next to the collections-c-for-gillian folder.
+You also need the `klee_src` folder that contains `include/klee/klee.h` to be next to the `collections-c-for-gillian` folder.
 
-Then, you can run a test suite, such as `array` by running
+Then, you can run a specific test suite (e.g. `array`) using
 
 ```
-$ ./testKleeFolder.sh for-klee/normal/pqueue
+$ ./testKleeFolder.sh for-klee/normal/array
 ```
 
-or 
+or
 
 ```
 $ ./testKleeFolder.sh for-klee/bugs

@@ -19,10 +19,10 @@ for filename in ${TESTS_DIR}/**/*.c; do
     if [[ "${ENABLE_STATS}" = "--stats" ]]; then
         time gillian-c wpst ${filename} -I ${LIB_HEADERS_DIR} \
             -I ${UTILS_HEADERS_DIR} -S ${LIB_SRC_DIR} -S ${UTILS_SRC_DIR} \
-            --ignore-undef -s --stats
+            --ignore-undef -l disabled --parallel --stats
     else
         time gillian-c wpst ${filename} -I ${LIB_HEADERS_DIR} \
             -I ${UTILS_HEADERS_DIR} -S ${LIB_SRC_DIR} -S ${UTILS_SRC_DIR} \
-            --ignore-undef -s --parallel
+            --ignore-undef -l disabled --parallel
     fi
 done

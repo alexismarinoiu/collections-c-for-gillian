@@ -2,4 +2,5 @@
 *.csm
 *.gil
 *.log
+*.deps
 klee_build
