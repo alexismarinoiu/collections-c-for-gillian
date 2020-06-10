@@ -4,6 +4,8 @@ This project is a fork of [Collections-C](https://github.com/srdja/Collections-C
 It contains the library as well as symbolic tests for it. There are two 
 versions of the library and two corresponding test suites included.
 
+The following instructions were tests with the following Gillian commit : [GillianPlatform/Gillian@b3ab5d2](https://github.com/GillianPlatform/Gillian/commit/b3ab5d2c335bcab4768e755276d62357f4e60670)
+
 The first can be found under `lib-with-bugs`, and contains the library 
 without the bug fixes that are detailed in the Gillian-C [documentation](https://gillianplatform.github.io/docs/c/cstest/). This corresponds to the Collections-C repo at commit [82878fd](https://github.com/srdja/Collections-C/tree/82878fd92a4586e7f2b1e476be335441f07ca92f), after accounting for only the files
 that are relevant to the tests. The tests for this version 
